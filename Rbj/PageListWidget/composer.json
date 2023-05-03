@@ -1,0 +1,26 @@
+{
+    "name": "rbj/page-list-widget",
+    "description": "Custom Widget to fetch CMS Page list in Magento",
+    "type": "magento2-module",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "version": "1.0.0",
+    "require": {
+        "magento/framework": "103.0.*",
+        "magento/module-backend": "102.0.*",
+        "magento/module-cms": "104.0.*",
+        "magento/module-widget": "101.2.*",
+        "php": "^8.0"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Rbj\\PageListWidget\\": ""
+        }
+    }
+}
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+/**
+ * Widget Declaration XML
+ *
+ * @author Rakesh Jesadiya <rakesh@rakeshjesadiya.com>
+ * @package Rbj_PageListWidget
+ */
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="rbj_cms_widget" class="Rbj\PageListWidget\Block\Adminhtml\Widget\CmsPage">
+        <label translate="true">Rbj CMS Page List</label>
+        <description>Rbj CMS Page List</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" visible="true" required="false" sort_order="10">
+                <label translate="true">Title</label>
+            </parameter>
+            <parameter name="display_mode" xsi:type="select" visible="true" required="true" sort_order="20">
+                <label translate="true">Display Mode</label>
+                <options>
+                    <option name="all" value="all">
+                        <label translate="true">All Pages</label>
+                    </option>
+                    <option name="specific_pages" value="specific_pages">
+                        <label translate="true">Specific Pages</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="types" xsi:type="multiselect" visible="true" required="true"
+                       source_model="Rbj\PageListWidget\Model\Source\CmsPageList" sort_order="30">
+                <label translate="true">Selected Pages</label>
+                <depends>
+                    <parameter name="display_mode" value="specific_pages" />
+                </depends>
+            </parameter>
+            <parameter name="template" xsi:type="select" visible="false">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="default" value="widget/cms_page_list.phtml" selected="true">
+                        <label translate="true">CMS Page Lists</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

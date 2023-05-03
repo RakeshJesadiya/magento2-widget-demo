@@ -1,0 +1,27 @@
+<?php
+/**
+ * Custom CMS Page Widget template
+ *
+ * @author Rakesh Jesadiya <rakesh@rakeshjesadiya.com>
+ * @package Rbj_PageListWidget
+ *
+ * @var $block \Rbj\PageListWidget\Block\Adminhtml\Widget\CmsPage
+ */
+?>
+<?php if ($block->getCmsPageCollection()->getSize()): ?>
+    <?php $cmsPages = $block->getCmsPageCollection(); ?>
+
+    <div class="widget block block-cmslist">
+        <div class="block-title">
+            <strong role="heading" aria-level="2"><?= /* @noEscape */ $block->getTitle(); ?></strong>
+        </div>
+
+        <?php foreach ($cmsPages as $cms): ?>
+           <div class="block-cms-page-link">
+                <a href="<?= $block->escapeUrl($cms->getIdentifier()) ?>">
+                    <span><?= $block->escapeHtml($cms->getTitle()) ?></span>
+                </a>
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>

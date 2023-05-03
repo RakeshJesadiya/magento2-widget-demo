@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Module Declaration XML
+ *
+ * @author Rakesh Jesadiya <rakesh@rakeshjesadiya.com>
+ * @package Rbj_PageListWidget
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Rbj_PageListWidget">
+        <sequence>
+            <module name="Magento_Widget"/>
+            <module name="Magento_Cms"/>
+        </sequence>
+    </module>
+</config>
